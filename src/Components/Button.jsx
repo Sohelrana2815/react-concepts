@@ -1,10 +1,19 @@
+import { useState } from "react";
 
 const Button = () => {
-    return (
-        <div>
-            <button>Count</button>
-        </div>
-    );
+  const [count, setCount] = useState(0);
+  function handleCount() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <br />
+      <br />
+
+      <button onClick={handleCount}>Count : {count}</button>
+    </div>
+  );
 };
 
 export default Button;

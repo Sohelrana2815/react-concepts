@@ -1,27 +1,20 @@
-import { useState } from "react";
 import "./App.css";
-
-function CounterButton() {
-  const [count, setCount] = useState(0);
-
-  const handleCount = () => {
-    setCount(count + 1);
-  };
-
-  return (
-    <>
-      <button onClick={handleCount}> Count: {count}</button> <br />
-      <br />
-    </>
-  );
-}
+import Items from "./Components/Items";
+import Button from "./Components/Button";
+import Profile from "./Components/Profile/Profile";
+import { useState } from "react";
+import SameCount from "./Components/SameCount/SameCount";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <>
-      <CounterButton></CounterButton>
-      <CounterButton></CounterButton>
-      <CounterButton></CounterButton>
+      <SameCount count={count} setCount={setCount}></SameCount>
+      <Profile></Profile>
+      <Items></Items>
+      <Button></Button>
+      <Button></Button>
     </>
   );
 }
